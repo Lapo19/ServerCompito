@@ -82,7 +82,7 @@ public class MioThread extends Thread{
                         else{
                             out.writeBytes("OK" + "\n");
                         }
-                    }else{
+                    }else if(tipo.equals("parterre")){
                         int calc = Biglietti.getBigliettiBase() - num;
                         Biglietti.setBigliettiBase(calc);
                         if(Biglietti.getBigliettiBase()<0){
@@ -93,6 +93,9 @@ public class MioThread extends Thread{
                         else{
                             out.writeBytes("OK" + "\n");
                         }
+                    }
+                    else{
+                        out.writeBytes("!" + "\n");
                     }
                     
                 }
